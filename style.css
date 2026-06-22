@@ -248,7 +248,7 @@ main,
     text-align: center;
     
     /* Appel de ton image */
-    background: url('/img/background-ski.jpg') no-repeat center center/cover;
+    background: url('img/background-ski.jpg') no-repeat center center/cover;
     color: #ffffff; /* Texte blanc par défaut dans cette zone */
 }
 
