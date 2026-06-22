@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="FRÉGIERS Axel">
+    <title>Axel Frégiers | Portfolio</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/img/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+
+    <!-- INTRO LOADER -->
+<div id="intro-loader">
+    <img src="/img/icon-removebg-preview.png" alt="AF" class="loader-logo">
+    <div class="loader-bar-wrapper">
+        <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-subtitle">Axel Frégiers | Portfolio</div>
+</div>
+
+
+
+
+    <div id="mouse-glow"></div>
+    <div id="cursor-trail"></div>
+    <canvas id="particle-canvas"></canvas>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home"><img src="/img/icon.png" alt="Logo Axel Frégiers"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#centre">Centre d'intérêt</a></li>
+                <li><a href="#contact" class="btn-contact">Contact</a></li>
+                <li><a href="/document/Axel Frégiers — CV 2026.pdf" download class="btn-cv">
+                    <span class="material-icons">download</span>
+                   Mon CV
+                </a>
+                
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- TOUT TON CONTENU DOIT RESTER DANS LE <main> -->
+    <main>
+        
+        <!-- SECTION 1 : HERO -->
+        <section class="hero" id="home">
+            
+            <div class="hero-content">
+                <span class="hero-badge">Étudiant MMI — IUT Tarbes</span>
+                <h1>Axel Frégiers</h1>
+                <p>Étudiant en B.U.T. Métiers du Multimédia et de l'Internet</p>
+                <div class="hero-btns">
+                    <a href="#projets" class="btn-primary">Découvrir mes projets</a>
+                    <a href="#contact" class="btn-outline">Me contacter</a>
+                </div>
+            </div>
+        </section>
+
+       <!-- SECTION 2 : ABOUT -->
+<section id="about" class="abt-container">
+    <span class="abt-subtitle reveal">Qui suis-je ?</span>
+
+    <div class="abt-card reveal">
+        <div class="abt-img">
+            <img src="/img/profile.png" alt="Photo de profil d'Axel Frégiers">
+        </div>
+
+        <div class="abt-text">
+            <h2>À propos de moi</h2>
+            
+           <p>
+    Actuellement étudiant en <strong>B.U.T. Métiers du Multimédia et de l'Internet</strong>, 
+    je me passionne pour le développement web, le cinéma et la création d'interfaces numériques interactives. 
+    Curieux et rigoureux, j'aime lier l'esthétique du Front-End à la logique du Back-End pour concevoir 
+    des projets aussi <strong>ludiques</strong> qu'<strong>utiles</strong>.
+</p>
+
+<p>
+    Grand passionné de l'univers <strong>High-Tech</strong>, je suis de très près l'actualité des produits innovants 
+    et des nouvelles technologies. C'est un intérêt que je nourris au quotidien, notamment en suivant des créateurs 
+    de contenu inspirants comme la chaîne <em>Léo - TechMaker</em> ou encore <em>Milomaker</em>.
+</p>
+
+<p>
+    Depuis mon adolescence, je suis également passionné de <strong>hardware</strong>, monter 
+    mes propres configurations PC est l'un de mes passe-temps favoris, entre choix des composants, 
+    benchmarks et recherche des meilleures performances.
+</p>
+            
+            <div class="abt-icons">
+                <div class="icon-item">
+                    <span class="material-icons">cake</span>
+                    <span class="icon-text">18/02/2006</span>
+                </div>
+                <div class="icon-item">
+                    <span class="material-icons">mail</span>
+                    <span class="icon-text">fregiers.axel2006@gmail.com</span>
+                </div>
+                <div class="icon-item">
+                    <span class="material-icons">extension</span>
+                    <span class="icon-text"><a href="https://padlet.com/axelfregiers/porfolio-axel-15xl60ik4n76cm0e" target="_blank">Padlet</a></span>
+                </div>
+                <div class="icon-item">
+    <svg class="material-icons"  xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#2563eb">
+        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+    </svg>
+    <span class="icon-text"><a href="https://github.com/fregiersaxel2006-svg" target="_blank">GitHub</a></span>
+</div>
+            </div>  
+        </div>
+    </div>
+</section>
+
+       <!-- SECTION 3 : citation philosophique -->
+
+<section class="philo-container">
+    <div class="philo-card reveal">
+        <div class="philo-content">
+            <span class="philo-icon">“</span>
+            <p class="philo-quote">Le seul vrai pouvoir révolutionnaire, c’est le pouvoir d’inventer.</p>
+            <span class="philo-author">Joseph Beuys</span>
+        </div>
+    </div>
+</section>
+
+
+       <!-- SECTION 4 : PARCOURS (TIMELINES MULTIPLES) -->
+<section id="parcours" class="timeline-container reveal">
+    <div class="timeline-header"> 
+        <span class="abt-subtitle">Mon Cursus & Expériences</span>
+        <h2>Mon Parcours</h2>
+    </div>
+
+    <!-- Conteneur global pour aligner les deux timelines -->
+    <div class="timelines-wrapper">
+
+        <!-- ================= TIMELINE ÉTUDES (BLEUE) ================= -->
+        <div class="timeline-column">
+            <h3 class="timeline-section-title">🎓 Cursus Scolaire</h3>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <!-- Élément 1 : B.U.T MMI -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span class="material-icons">school</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - Actuellement</span>
+                        <h3>B.U.T. Métiers du Multimédia</h3>
+                        <h4>IUT de Tarbes</h4>
+                        <p>Développement web (Front & Back), design d'interfaces (UX/UI) et création de contenus.</p>
+                    </div>
+                </div>
+
+                <!-- Élément 2 : Baccalauréat -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span class="material-icons">movie</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2024</span>
+                        <h3>Baccalauréat Général</h3>
+                        <h4>Spécialités Cinéma, SNT & SES</h4>
+                        <p>Initiation à l'algorithmique avec Scratch et développement de petits projets en Python.</p>
+                    </div>
+                </div>
+
+                <!-- Élément 3 : Brevet -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span class="material-icons">view_in_ar</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2018 - 2021</span>
+                        <h3>Brevet des Collèges</h3>
+                        <h4>Option Anglais Euro</h4>
+                        <p>Premiers pas dans l'univers de la 3D avec le logiciel SketchUp à travers un projet de technologie.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TIMELINE JOBS (VERTE) ================= -->
+        <div class="timeline-column">
+            <h3 class="timeline-section-title">💼 Expériences & Jobs</h3>
+            <div class="timeline timeline-pro"> <!-- Note la classe 'timeline-pro' pour cibler le vert -->
+                <div class="timeline-line"></div>
+
+                <!-- Job d'été 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span class="material-icons">work</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Avril - Mai 2025</span>
+                        <h3>Job d'été - Caissier</h3>
+                        <h4>Carrefour Market — Villevieille</h4>
+                        <p>Encaissement fluide, gestion optimale des flux clients, rigueur de caisse et adaptabilité.</p>
+                    </div>
+                </div>
+
+                  <!-- Job d'été 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span class="material-icons">work</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Juillet - Août 2024</span>
+                        <h3>Job d'été - Serveur</h3>
+                        <h4>Restaurant Sansavino — Sommières</h4>
+                        <p>Service en salle de haute exigence, gestion du stress en plein rush et relation client optimisée, capacité à adapter sa communication à un public international.</p>
+                    </div>
+                </div>
+
+                   <!-- Job d'été 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span class="material-icons">local_police</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Janvier 2021</span>
+                        <h3>Stage d'observation - En immersion </h3>
+                        <h4>École National de Police — Nîmes</h4>
+                        <p>Découverte des métiers de la sécurité sur une période d'une semaine, initiation aux techniques de self-défense et aux gestes de premiers secours. Observation des protocoles de gestion du stress et mise en situation de tir avec un moniteur qualifié. Renforcement de la rigueur et de la discipline.</p>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+
+        
+
+    </div>
+</section>
+
+<!-- SECTION 5 : COMPÉTENCES -->
+        <section id="competences" class="skills-container reveal">
+            <div class="skills-header">
+                <span class="abt-subtitle">Ce que je sais faire</span>
+                <h2>Mes Compétences</h2>
+            </div>
+
+            <div class="skills-grid">
+                
+                <!-- Catégorie 1 : Programmation -->
+                <div class="skills-card">
+                    <div class="card-header-icon">
+                        <span class="material-icons">code</span>
+                        <h3>Programmation</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>HTML / CSS</span><span>90%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>JavaScript</span><span>65%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="65%"></div></div>
+                        </div>
+                         <div class="skill-item">
+                            <div class="skill-info"><span>Bootstrap</span><span>70%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>PHP</span><span>50%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="50%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>MySQL</span><span>55%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="55%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catégorie 2 : Logiciels Graphiques -->
+                <div class="skills-card">
+                    <div class="card-header-icon">
+                        <span class="material-icons">palette</span>
+                        <h3>Design Graphique & UI/UX</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Adobe Photoshop</span><span>65%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="65%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Adobe Illustrator</span><span>70%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Canva</span><span>75%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Pixlr</span><span>25%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="25%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Figma</span><span>80%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catégorie 3 : Logiciels de Montage -->
+                <div class="skills-card">
+                    <div class="card-header-icon">
+                        <span class="material-icons">movie_creation</span>
+                        <h3>Montage Vidéo</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>CapCut</span><span>90%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>After Effects</span><span>60%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="60%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catégorie 4 : Jeu Dev & 3D -->
+                <div class="skills-card">
+                    <div class="card-header-icon">
+                        <span class="material-icons">view_in_ar</span>
+                        <h3>Jeu Dev & 3D</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Blender</span><span>65%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="65%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Roblox Studio</span><span>80%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Scratch</span><span>95%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Catégorie 5 : Langues -->
+<div class="skills-card text-fullwidth">
+    <div class="card-header-icon">
+        <span class="material-icons">language</span>
+        <h3>Langues</h3>
+    </div>
+    <div class="skills-list">
+        <div class="skill-item">
+            <div class="skill-info">
+                <span><img src="/img/fr.png" alt="Français" class="flag-icon"> Français</span>
+                <span>95%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-info">
+                <span><img src="/img/ru.png" alt="Anglais" class="flag-icon"> Anglais</span>
+                <span>80%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-info">
+                <span><img src="/img/de.png" alt="Allemand" class="flag-icon"> Allemand</span>
+                <span>50%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="50%"></div></div>
+        </div>
+    </div>
+</div>
+
+                <!-- Catégorie 6 : Outils Divers -->
+                <div class="skills-card text-fullwidth">
+                    <div class="card-header-icon">
+                        <span class="material-icons">build</span>
+                        <h3>Outils Divers</h3>
+                    </div>
+                    <div class="skills-list tools-flex">
+                        <div class="tool-tag tag-vscode"><span class="material-icons">terminal</span> VS Code</div>
+                        <div class="tool-tag tag-notepad"><span class="material-icons">note_add</span> Notepad++</div>
+                        <div class="tool-tag tag-xampp"><span class="material-icons">dns</span> XAMPP</div>
+                        <div class="tool-tag tag-trends"><span class="material-icons">trending_up</span> Google Trends</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projets" class="projects-container reveal">
+            <div class="projects-header">
+                <span class="abt-subtitle">Mes réalisations</span>
+                <h2>Mes Projets</h2>
+                <p class="projects-intro">Découvrez un aperçu des projets que j'ai réalisés dans le cadre de mes études en MMI ou de mes passions personnelles.</p>
+            </div>
+
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="/img/dungeon-adventure.jpg" alt="Capture d'un projet web">
+                        <span class="project-badge badge-jeu">Développement Jeu</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Dungeon Adventure</h3>
+                        <p>Jeu de labyrinthe 2D conçu sur Scratch en équipe, où j'ai assuré le rôle de programmeur principal, gameplay complet, système de vies, inventaire et sprites animés réalisés sur Pixel Studio dans un style Game Boy Advance.</p>
+                        <div class="project-techs">
+                            <span>Scratch</span>
+                            <span>Itchi.o</span>
+                            <span>Pixel Studio</span>
+                        </div>
+                        <a href="/projets.html#dungeon-adventure" class="btn-project-link">Voir le projet <span class="material-icons">arrow_right_alt</span></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="/img/blender7.jpg" alt="Capture projet 3D / Jeu">
+                        <span class="project-badge badge-3d">Modélisation 3D</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Modélisation Low poly</h3>
+                        <p>Scènes low poly modélisées sur Blender, une forêt avec Salamèche et Bulbizarre entièrement modélisés avec travail de lumière, et un personnage avec armature complète en cours d'animation.</p>
+                        <div class="project-techs">
+                            <span>Blender</span>
+                        </div>
+                        <a href="/projets.html#3d" class="btn-project-link">Voir le projet <span class="material-icons">arrow_right_alt</span></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="/img/pelemain.png" alt="Capture d'un projet de design">
+                        <span class="project-badge badge-design">UI/UX Design</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Identité Visuelle Fictive</h3>
+                        <p>Maquette d'application mobile de voyage et pèlerinage conçue sur Figma, parcours utilisateur, wireframes, prototypage interactif et système de gamification avec points et récompenses partenaires.</p>
+                        <div class="project-techs">
+                             <span>Figma</span>
+                             <span>UI/UX Design</span>
+                             <span>Prototypage</span>
+                             <span>Wireframing</span>
+                        </div>
+                        <a href="/projets.html#design" class="btn-project-link">Voir le projet <span class="material-icons">arrow_right_alt</span></a>
+                    </div>
+                </div>
+
+                 <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="/img/etau-de-lombre.png" alt="Projet cinema étau de l'ombre">
+                        <span class="project-badge badge-cinema">Cinéma & Audiovisuel</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>L'étau de l'ombre</h3>
+                        <p>Réalisation d'un court-métrage en 12 heures chrono. Une véritable course contre la montre exigeant une gestion du temps rigoureuse et le respect strict du scénario, traduit fidèlement à l'écran à travers l'intégralité de chaque plan.</p>
+                        <div class="project-techs">
+                            <span>Scénario</span>
+                            <span>Cadrage</span>
+                            <span>After Effect</span>
+                        </div>
+                        <a href="/projets.html#cinema" class="btn-project-link">Voir le projet <span class="material-icons">arrow_right_alt</span></a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="/img/bouque.png" alt="Projet mybouque">
+                        <span class="project-badge badge-web">Développement Web</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>MyBouque</h3>
+                        <p>Application web full-stack de gestion de soirées cinéma thématiques, vote Borda, inscription, authentification bcrypt, interactions AJAX et tableau de bord administrateur.</p>
+                        <div class="project-techs">
+                        <span>PHP</span>
+                        <span>MariaDB</span>
+                        <span>MySQLi</span>
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>AJAX</span>
+                        <span>Apache</span>
+                        </div>
+                        <a href="/projets.html#web" class="btn-project-link">Voir le projet <span class="material-icons">arrow_right_alt</span></a>
+                    </div>
+                </div>
+
+                  <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="/img/east.png" alt="Projet eastblue">
+                        <span class="project-badge badge-graphique">Design Graphique</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>East Blue</h3>
+                        <p>Création d'une identité visuelle complète pour une startup de sneakers éco-responsables fabriquées à partir de filets de pêche recyclés, logo, moodboard, persona UX et charte graphique.</p>
+                        <div class="project-techs">
+                        <span>Identité visuelle</span>
+                        <span>Branding</span>
+                        <span>Moodboard</span>
+                        <span>Typographie</span>
+                        <span>Persona UX</span>
+                        <span>Adobe Illustrator</span>
+                        <span>Photoshop</span>
+                        </div>
+                        <a href="/projets.html#graphique" class="btn-project-link">Voir le projet <span class="material-icons">arrow_right_alt</span></a>
+                    </div>
+                </div>
+
+
+                
+
+                
+
+                
+
+
+            </div>
+        </section>
+                   
+        <!-- SECTION 6 : CENTRE D'INTÉRÊT -->
+        <section id="centre" class="interests-container reveal">
+            <div class="interests-header">
+                <span class="abt-subtitle">Ce qui me passionne</span>
+                <h2>Mes Centres d'intérêt</h2>
+            </div>
+
+            <div class="interests-grid">
+                
+                <!-- Passion 1 : High-Tech -->
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <span class="material-icons">devices</span>
+                    </div>
+                    <h3>High-Tech & Innovation</h3>
+                    <p>Suivi quotidien de l'actualité tech avec <strong>TheiCollection</strong> ou <strong>Jojol</strong> sur <strong>les nouveaux gadgets</strong>, et <strong>FrenchHardware</strong> sur les <strong>composants PC</strong> et des innovations qui façonnent le futur numérique.</p>
+                </div>
+
+                <!-- Passion 2 : Création de Contenu -->
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <span class="material-icons">smart_display</span>
+                    </div>
+                    <h3>Création & Vidéo</h3>
+                    <p>Passionné de culture web <strong>(YouTube/TikTok/Twitch)</strong> et inspiré par la <strong>CacaboxTV</strong>, je possède une solide culture des mèmes. L'univers du streaming et du format court n'a aucun secret pour moi. J'aime explorer <strong>l'humour décalé</strong> et <strong>le montage loufoque</strong> pour capter l'attention là où on ne l'attend pas.</p>
+                </div>
+
+                <!-- Passion 3 : Gaming & Game Dev -->
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <span class="material-icons">sports_esports</span>
+                    </div>
+                    <h3>Jeux Vidéo & Univers Ludiques</h3>
+                    <p>Passion pour le gaming, <strong>friand de MMO</strong> comme <strong>Dofus</strong>, ainsi que de jeux inspirés d'univers tels que <strong>Pokémon</strong> et <strong>Dragon Quest.</strong> Mais aussi pour l'envers du décor la <strong>conception d'univers interactifs</strong> et <strong>les mécaniques de jeu.</strong></p>
+                </div>
+
+                <!-- Passion 4 : Cinéma -->
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <span class="material-icons">theaters</span>
+                    </div>
+                    <h3>Cinéma & Audiovisuel</h3>
+                    <p>Sensibilisé aux <strong>techniques de cadrage,</strong> de <strong>montage</strong> et de narration visuelle grâce à ma spécialité au lycée, j'affectionne particulièrement le cinéma <strong>d'animation</strong> et <strong>les comédies horrifiques,</strong> avec une forte admiration pour l'univers de Tim Burton avec <strong>L'Étrange Noël de monsieur Jack</strong>, <strong>Frankenweenie</strong></p>
+                </div>
+
+            </div>
+        </section>
+
+    </main> 
+
+   <!--SECTION 7 : FOOTER -->
+
+<footer class="main-footer reveal" id="contact">
+    <div class="footer-content">
+        
+        <div class="footer-brand">
+            <div class="footer-logos">
+                <a href="#home"><img src="/img/icon.png" alt="Logo Axel Frégiers" class="footer-logo"></a>
+                <a href="https://www.iut-tarbes.fr/" target="_blank"><img src="/img/UTTOP-logo.png" alt="Logo IUT Tarbes" class="UTTOP-logo"></a>
+            </div>
+            
+            <div class="footer-title">
+                <h3>Axel Frégiers</h3>
+                <p>Étudiant en Métiers du Multimédia et de l'Internet. Passionné par l'univers High-Tech, le développement web et le cinéma.</p>
+            </div>
+        </div>
+
+        <div class="footer-links-col">
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-item">
+                <span class="material-icons">mail</span>
+                <a href="mailto:fregiers.axel2006@gmail.com">fregiers.axel2006@gmail.com</a>
+            </div>
+
+            <div class="footer-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 127.14 96.36">
+                    <path fill="" d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+                </svg>
+                <a href="https://discord.com/users/445197238688415747" target="_blank">Discord</a>
+            </div>
+
+            <div class="footer-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#94a3b8">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <a href="https://www.linkedin.com/in/axel-fregiers-385538313/" target="_blank">LinkedIn</a>
+            </div>
+
+            <div class="footer-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#94a3b8">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+                <a href="https://instagram.com/axel.fr3" target="_blank">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Axel Frégiers. N'hésitez pas à me contacter <em style="color: #94a3b8;">par e-mail</em> ou par <em style="color: #94a3b8;"> téléphone</em> si vous avez des questions.</p>
+    </div>
+</footer>
+
+
+<script>
+const canvas = document.getElementById('particle-canvas');
+const ctx    = canvas.getContext('2d');
+let   pts    = [];
+
+const CFG = {
+    count : 120,      
+    size  : 3,        
+    speed : 0.3,       
+    r: 99, g: 140, b: 255,
+    lines : true,
+    lineDist: 150,    
+};
+
+function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function mkPt() {
+    const s = 0.8 + Math.random() * (CFG.size - 0.8);
+    return {
+        x    : Math.random() * canvas.width,
+        y    : canvas.height + s,
+        s,
+        spd  : 0.15 + Math.random() * CFG.speed,
+        drift: (Math.random() - 0.5) * 0.4,
+        op   : 0.4 + Math.random() * 0.6,
+    };
+}
+
+
+for (let i = 0; i < CFG.count; i++) {
+    const p = mkPt();
+    p.y = Math.random() * canvas.height; 
+    pts.push(p);
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const {r, g, b} = CFG;
+
+    // Dessiner les lignes EN PREMIER (sous les points)
+    if (CFG.lines) {
+        for (let i = 0; i < pts.length; i++) {
+            for (let j = i + 1; j < pts.length; j++) {
+                const dx   = pts[i].x - pts[j].x;
+                const dy   = pts[i].y - pts[j].y;
+                const dist = Math.hypot(dx, dy);
+                if (dist < CFG.lineDist) {
+                    const alpha = (1 - dist / CFG.lineDist) * 0.5;
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(${r},${g},${b},${alpha})`;
+                    ctx.lineWidth = 0.8;
+                    ctx.moveTo(pts[i].x, pts[i].y);
+                    ctx.lineTo(pts[j].x, pts[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    // Dessiner les points PAR DESSUS
+    pts.forEach(p => {
+        p.y -= p.spd;
+        p.x += p.drift;
+
+        // Reboucler : quand une particule sort en haut, elle revient en bas
+        if (p.y + p.s < 0) {
+            p.y    = canvas.height + p.s;
+            p.x    = Math.random() * canvas.width;
+            p.spd  = 0.15 + Math.random() * CFG.speed;
+            p.drift= (Math.random() - 0.5) * 0.4;
+        }
+        // Si elle sort sur les côtés, elle revient de l'autre côté
+        if (p.x < -10) p.x = canvas.width + 10;
+        if (p.x > canvas.width + 10) p.x = -10;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.s, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${r},${g},${b},${p.op})`;
+        ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+}
+draw();
+
+</script>
+
+<script>
+    //effet de souris sur tout le flux
+// Glow
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth * 100;
+    const y = e.clientY / window.innerHeight * 100;
+    document.documentElement.style.setProperty('--mouse-x', x + '%');
+    document.documentElement.style.setProperty('--mouse-y', y + '%');
+});
+
+// Particules souris
+const particleCanvas = document.createElement('canvas');
+particleCanvas.id = 'cursor-particles';
+particleCanvas.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none;';
+document.body.appendChild(particleCanvas);
+const pCtx = particleCanvas.getContext('2d');
+
+particleCanvas.width = window.innerWidth;
+particleCanvas.height = window.innerHeight;
+window.addEventListener('resize', () => {
+    particleCanvas.width = window.innerWidth;
+    particleCanvas.height = window.innerHeight;
+});
+
+let cursorX = 0, cursorY = 0;
+const particles = [];
+
+document.addEventListener('mousemove', (e) => {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+
+    for (let i = 0; i < 1; i++) {
+        particles.push({
+            x: cursorX,
+            y: cursorY,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2 - 1,
+            size: Math.random() * 4 + 1,
+            opacity: 0.5,
+            color: Math.random() > 0.5 ? '37,99,235' : '96,165,250',
+        });
+    }
+});
+
+function drawParticles() {
+    pCtx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.05; // gravité légère
+        p.opacity -= 0.02;
+        p.size *= 0.97;
+
+        if (p.opacity <= 0) {
+            particles.splice(i, 1);
+            continue;
+        }
+
+        pCtx.beginPath();
+        pCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        pCtx.fillStyle = `rgba(${p.color}, ${p.opacity})`;
+        pCtx.fill();
+    }
+
+    requestAnimationFrame(drawParticles);
+}
+
+drawParticles();
+</script>
+     
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('intro-loader').classList.add('hidden');
+    }, 1500);
+});
+</script>
+
+<script>
+// --- SCROLL REVEAL ---
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+revealEls.forEach(el => revealObserver.observe(el));
+
+// --- BARRES DE COMPÉTENCES ANIMÉES ---
+const bars = document.querySelectorAll('.progress-fill');
+
+bars.forEach(bar => {
+    const target = bar.getAttribute('data-width');
+    bar.style.setProperty('--target-width', target);
+});
+
+const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            barObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+bars.forEach(bar => barObserver.observe(bar));
+</script>
+
+</body>
+</html>
