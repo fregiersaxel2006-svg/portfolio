@@ -856,17 +856,17 @@ bars.forEach(bar => barObserver.observe(bar));
 </script>
 
 <script>
-const toggle = document.getElementById('nav-toggle');
-const navLinks = document.getElementById('nav-links');
-toggle?.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-open');
-    toggle.querySelector('.material-icons').textContent =
-        navLinks.classList.contains('nav-open') ? 'close' : 'menu';
+document.getElementById('nav-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('nav-links');
+    const icon = this.querySelector('.material-icons');
+    menu.classList.toggle('nav-open');
+    icon.textContent = menu.classList.contains('nav-open') ? 'close' : 'menu';
 });
-document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-        navLinks.classList.remove('nav-open');
-        toggle.querySelector('.material-icons').textContent = 'menu';
+
+document.querySelectorAll('#nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+        document.getElementById('nav-links').classList.remove('nav-open');
+        document.querySelector('#nav-toggle .material-icons').textContent = 'menu';
     });
 });
 </script>
