@@ -17,18 +17,7 @@
         <div class="logo">
             <a href="index.html"><img src="img/icon.png" alt="Logo"></a>
         </div>
-        <nav class="navbar">
-    <div class="logo">
-        <a href="#home"><img src="img/icon.png" alt="Logo Axel Frégiers"></a>
-    </div>
-    <!-- Ajouter ce bouton -->
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
-        <span class="material-icons">menu</span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-        ...
-    </ul>
-</nav>
+        
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="index.html#about">À propos</a></li>
@@ -756,20 +745,5 @@ function animate() {
 animate();
 </script>
 
-<script>
-const toggle = document.getElementById('nav-toggle');
-const navLinks = document.getElementById('nav-links');
-toggle?.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-open');
-    toggle.querySelector('.material-icons').textContent =
-        navLinks.classList.contains('nav-open') ? 'close' : 'menu';
-});
-document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-        navLinks.classList.remove('nav-open');
-        toggle.querySelector('.material-icons').textContent = 'menu';
-    });
-});
-</script>
-                    
+
 </html>
