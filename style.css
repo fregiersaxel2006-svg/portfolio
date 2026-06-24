@@ -1724,4 +1724,118 @@ body::after {
     width: var(--target-width) !important;
 }
 
+/* ==========================================================================
+   HAMBURGER MENU — MOBILE ONLY (max-width: 900px)
+   ========================================================================== */
 
+/* Le bouton hamburger est caché sur desktop */
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    /* --- Bouton hamburger --- */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1100;
+        position: relative;
+    }
+
+    .ham-bar {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform-origin: center;
+    }
+
+    /* Animation vers croix quand actif */
+    .hamburger.is-active .ham-bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.is-active .ham-bar:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    .hamburger.is-active .ham-bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* --- Menu mobile (panneau latéral / drawer) --- */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100dvh;
+        width: min(280px, 80vw);
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 80px 32px 40px 32px;
+
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1050;
+    }
+
+    .nav-links.nav-open {
+        transform: translateX(0);
+    }
+
+    /* Liens dans le drawer */
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1.05rem;
+        padding: 10px 0;
+        display: block;
+        opacity: 1;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        width: 100%;
+    }
+
+    /* Bouton Contact dans le drawer */
+    .nav-links .btn-contact {
+        margin-top: 16px;
+        display: block;
+        text-align: center;
+        border-bottom: none;
+        padding: 11px 20px;
+    }
+
+    /* Bouton CV dans le drawer */
+    .nav-links .btn-cv {
+        margin-top: 10px;
+        justify-content: center;
+        border-bottom: none;
+        width: 100%;
+    }
+
+    /* Overlay sombre derrière le drawer */
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+        backdrop-filter: blur(2px);
+    }
+}
