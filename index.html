@@ -30,25 +30,30 @@
     <canvas id="particle-canvas"></canvas>
     <header class="main-header">
         <nav class="navbar">
-            <div class="logo">
-                <a href="#home"><img src="img/icon.png" alt="Logo Axel Frégiers"></a>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#parcours">Parcours</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#centre">Centre d'intérêt</a></li>
-                <li><a href="#contact" class="btn-contact">Contact</a></li>
-                <li><a href="document/Axel Frégiers — CV 2026.pdf" download="CV_Axel_Fregiers.pdf" class="btn-cv" target="_blank">
-                    <span class="material-icons">download</span>
-                   Mon CV
-                </a>
-                
-                </li>
-            </ul>
-        </nav>
+    <div class="logo">
+        <a href="#home"><img src="img/icon.png" alt="Logo Axel Frégiers"></a>
+    </div>
+
+    <!-- Bouton hamburger (visible uniquement mobile) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-close">À propos</a></li>
+        <li><a href="#parcours" class="nav-close">Parcours</a></li>
+        <li><a href="#competences" class="nav-close">Compétences</a></li>
+        <li><a href="#projets" class="nav-close">Projets</a></li>
+        <li><a href="#centre" class="nav-close">Centre d'intérêt</a></li>
+        <li><a href="#contact" class="btn-contact nav-close">Contact</a></li>
+        <li><a href="document/Axel Frégiers — CV 2026.pdf" download="CV_Axel_Fregiers.pdf" class="btn-cv" target="_blank">
+            <span class="material-icons">download</span>
+            Mon CV
+        </a></li>
+    </ul>
+</nav>
     </header>
 
     <!-- TOUT TON CONTENU DOIT RESTER DANS LE <main> -->
@@ -857,5 +862,28 @@ const barObserver = new IntersectionObserver((entries) => {
 bars.forEach(bar => barObserver.observe(bar));
 </script>
 
+<script>
+// --- HAMBURGER MENU ---
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navLinks     = document.getElementById('nav-links');
+
+hamburgerBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('nav-open');
+    hamburgerBtn.classList.toggle('is-active', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+});
+
+// Ferme le menu au clic sur un lien
+document.querySelectorAll('.nav-close').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('nav-open');
+        hamburgerBtn.classList.remove('is-active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+    });
+});
+</script>
+    
 </body>
 </html>
