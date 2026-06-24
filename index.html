@@ -34,6 +34,11 @@
                 <a href="#home"><img src="img/icon.png" alt="Logo Axel Frégiers"></a>
             </div>
             
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <span class="material-icons menu-icon">menu</span>
+                <span class="material-icons close-icon">close</span>
+            </button>
+            
             <ul class="nav-links">
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#parcours">Parcours</a></li>
@@ -45,7 +50,6 @@
                     <span class="material-icons">download</span>
                    Mon CV
                 </a>
-                
                 </li>
             </ul>
         </nav>
@@ -851,6 +855,27 @@ const barObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 bars.forEach(bar => barObserver.observe(bar));
+</script>
+
+    <script>
+// --- LOGIQUE NAVBAR MOBILE (HAMBURGER) ---
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinksContainer = document.querySelector('.nav-links');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+// Ouvrir / Fermer le menu au clic sur le bouton
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinksContainer.classList.toggle('active');
+});
+
+// Fermer automatiquement le menu au clic sur un lien (pour la navigation interne)
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinksContainer.classList.remove('active');
+    });
+});
 </script>
 
 </body>
