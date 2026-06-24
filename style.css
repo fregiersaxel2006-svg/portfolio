@@ -1724,4 +1724,67 @@ body::after {
     width: var(--target-width) !important;
 }
 
+/* ==========================================================================
+   RESPONSIVE NAVBAR (MENU HAMBURGER MOBILE)
+   ========================================================================== */
+
+/* Masqué par défaut sur grand écran (PC) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .close-icon {
+    display: none; /* Cache l'icône de fermeture initialement */
+}
+
+/* Quand le bouton est actif, on alterne les icônes */
+.menu-toggle.active .menu-icon { display: none; }
+.menu-toggle.active .close-icon { display: inline-block; }
+
+/* Déclenchement sous 992px (Format Tablette & Mobile) */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block; /* Devient visible sur mobile */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Caché sur le côté droit par défaut */
+        width: 70%; /* Prend une partie de l'écran en largeur */
+        height: 100vh;
+        background: rgba(15, 23, 42, 0.95); /* Arrière-plan sombre reprenant ta charte */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px; /* Espace vertical entre les liens */
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transition glissée et fluide */
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 40px 20px;
+    }
+
+    /* Déploiement du menu sur l'écran */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Ajustement des boutons internes pour le format vertical */
+    .nav-links .btn-contact {
+        width: 80%;
+        text-align: center;
+    }
+
+    .btn-cv {
+        width: 80%;
+        justify-content: center;
+    }
+}
 
