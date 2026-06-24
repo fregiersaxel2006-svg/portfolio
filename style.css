@@ -1751,17 +1751,17 @@ body::after {
         z-index: 1001;
     }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(15, 23, 42, 0.98);
-        padding: 100px 30px 40px;
-        gap: 8px;
-        z-index: 1000;
-        overflow-y: auto;
-    }
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.98);
+    padding: 100px 30px 40px;
+    gap: 8px;
+    z-index: 1000;
+    overflow-y: auto;
+}
 
     .nav-links.nav-open { display: flex; }
 
