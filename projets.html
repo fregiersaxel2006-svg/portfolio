@@ -12,18 +12,35 @@
 
     <div id="mouse-glow"></div>
     <canvas id="particle-canvas"></canvas>
+
 <header class="main-header">
     <nav class="navbar">
         <div class="logo">
             <a href="index.html"><img src="img/icon.png" alt="Logo"></a>
         </div>
+
+        <!-- BOUTON HAMBURGER (mobile uniquement) -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- OVERLAY sombre derrière le menu mobile -->
+        <div class="nav-overlay" id="nav-overlay"></div>
         
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="index.html#about">À propos</a></li>
-            <li><a href="projets.html" class="active">Projets</a></li>
-            <li><a href="index.html#contact" class="btn-contact">Contact</a></li>
-            <li><a href="document/Axel Frégiers — CV 2026.pdf" download="CV_Axel_Fregiers.pdf" class="btn-cv" target="_blank">
+        <ul class="nav-links" id="nav-links">
+            <!-- Bouton fermer (mobile uniquement) -->
+            <li class="nav-close-item">
+                <button class="nav-close-btn" id="nav-close-btn" aria-label="Fermer le menu">
+                    <span class="material-icons">close</span>
+                </button>
+            </li>
+            <li><a href="index.html" class="nav-link-item">Accueil</a></li>
+            <li><a href="index.html#about" class="nav-link-item">À propos</a></li>
+            <li><a href="projets.html" class="active nav-link-item">Projets</a></li>
+            <li><a href="index.html#contact" class="btn-contact nav-link-item">Contact</a></li>
+            <li><a href="document/Axel Frégiers — CV 2026.pdf" download="CV_Axel_Fregiers.pdf" class="btn-cv nav-link-item" target="_blank">
                     <span class="material-icons">download</span>
                     Mon CV
                 </a>
@@ -34,15 +51,15 @@
 
 
 
-    <main class="project-page-container reveal">
+    <main class="project-page-container">
         
-        <header class="project-page-header">
+        <header class="project-page-header reveal">
             <span class="abt-subtitle">Portfolio</span>
             <h2>Tous mes projets</h2>
             <p class="projects-intro">Découvrez en détail les coulisses, les technologies utilisées et les visuels de mes réalisations.</p>
         </header>
       <div id="dungeon-adventure" ></div>
-        <section  class="detailed-project-section">
+        <section  class="detailed-project-section reveal">
             <div class="project-detail-card">
                 
                 <div class="project-gallery">
@@ -97,7 +114,7 @@
         </section>
          
      <div id="3d"></div>
-<section class="detailed-project-section project-reverse">
+<section class="detailed-project-section project-reverse reveal">
     <div class="project-detail-card" style="flex-direction: column;">
 
         <!-- Partie haute : galerie + texte côte à côte comme avant -->
@@ -156,7 +173,7 @@
 </section>
 
 <div id="design"></div>
-<section class="detailed-project-section">
+<section class="detailed-project-section reveal">
     <div class="project-detail-card">
         
         <div class="project-gallery">
@@ -202,7 +219,7 @@
 
 
           <div id="cinema"></div>
-          <section class="detailed-project-section project-reverse">
+          <section class="detailed-project-section project-reverse reveal">
             <div class="project-detail-card">
                 
                 <div class="project-gallery">
@@ -249,7 +266,7 @@
         </section>
 
                          <div id="web"></div>
-                <section class="detailed-project-section">
+                <section class="detailed-project-section reveal">
             <div class="project-detail-card">
                 
                 <div class="project-gallery">
@@ -299,7 +316,7 @@
 </section>
 
    <div id="graphique"></div>
-<section class="detailed-project-section project-reverse">
+<section class="detailed-project-section project-reverse reveal">
     <div class="project-detail-card">
         
         <div class="project-gallery">
@@ -459,7 +476,6 @@ function mkPt() {
     };
 }
 
-
 for (let i = 0; i < CFG.count; i++) {
     const p = mkPt();
     p.y = Math.random() * canvas.height; 
@@ -470,7 +486,6 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const {r, g, b} = CFG;
 
-    // Dessiner les lignes EN PREMIER (sous les points)
     if (CFG.lines) {
         for (let i = 0; i < pts.length; i++) {
             for (let j = i + 1; j < pts.length; j++) {
@@ -490,19 +505,16 @@ function draw() {
         }
     }
 
-    // Dessiner les points PAR DESSUS
     pts.forEach(p => {
         p.y -= p.spd;
         p.x += p.drift;
 
-        // Reboucler : quand une particule sort en haut, elle revient en bas
         if (p.y + p.s < 0) {
             p.y    = canvas.height + p.s;
             p.x    = Math.random() * canvas.width;
             p.spd  = 0.15 + Math.random() * CFG.speed;
             p.drift= (Math.random() - 0.5) * 0.4;
         }
-        // Si elle sort sur les côtés, elle revient de l'autre côté
         if (p.x < -10) p.x = canvas.width + 10;
         if (p.x > canvas.width + 10) p.x = -10;
 
@@ -515,12 +527,9 @@ function draw() {
     requestAnimationFrame(draw);
 }
 draw();
-
 </script>
 
 <script>
-    //effet de souris sur tout le flux
-// Glow
 document.addEventListener('mousemove', (e) => {
     const x = e.clientX / window.innerWidth * 100;
     const y = e.clientY / window.innerHeight * 100;
@@ -528,7 +537,6 @@ document.addEventListener('mousemove', (e) => {
     document.documentElement.style.setProperty('--mouse-y', y + '%');
 });
 
-// Particules souris
 const particleCanvas = document.createElement('canvas');
 particleCanvas.id = 'cursor-particles';
 particleCanvas.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none;';
@@ -569,7 +577,7 @@ function drawParticles() {
         const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.05; // gravité légère
+        p.vy += 0.05;
         p.opacity -= 0.02;
         p.size *= 0.97;
 
@@ -595,7 +603,6 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
 
-// Rend toutes les images de la galerie cliquables
 document.querySelectorAll('.project-gallery img').forEach(img => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {
@@ -606,7 +613,6 @@ document.querySelectorAll('.project-gallery img').forEach(img => {
     });
 });
 
-// Fermer au clic sur l'overlay ou le bouton
 lightbox.addEventListener('click', (e) => {
     if (e.target !== lightboxImg) {
         lightbox.classList.remove('active');
@@ -619,7 +625,6 @@ lightboxClose.addEventListener('click', () => {
     document.body.style.overflow = '';
 });
 
-// Fermer avec Échap
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         lightbox.classList.remove('active');
@@ -629,7 +634,6 @@ document.addEventListener('keydown', (e) => {
 </script>
 
 <script>
-    // --- SCROLL REVEAL ---
 const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -641,8 +645,43 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 revealEls.forEach(el => revealObserver.observe(el));
+</script>
 
+<!-- ===================== HAMBURGER MENU SCRIPT ===================== -->
+<script>
+(function() {
+    const btn      = document.getElementById('hamburger-btn');
+    const navList  = document.getElementById('nav-links');
+    const overlay  = document.getElementById('nav-overlay');
+    const closeBtn = document.getElementById('nav-close-btn');
 
+    function openMenu() {
+        navList.classList.add('nav-open');
+        overlay.classList.add('overlay-visible');
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        navList.classList.remove('nav-open');
+        overlay.classList.remove('overlay-visible');
+        btn.classList.remove('is-active');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', () => {
+        navList.classList.contains('nav-open') ? closeMenu() : openMenu();
+    });
+
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    navList.querySelectorAll('.nav-link-item').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+})();
 </script>
 
 <script type="importmap">
@@ -662,21 +701,17 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 const canvas = document.getElementById('canvas-3d');
 if (!canvas) throw new Error('Canvas not found');
 
-// Renderer
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
 renderer.shadowMap.enabled = true;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-// Scène
 const scene = new THREE.Scene();
 
-// Caméra
 const camera = new THREE.PerspectiveCamera(45, canvas.offsetWidth / canvas.offsetHeight, 0.1, 100);
 camera.position.set(0, 2, 6);
 
-// Lumières
 const ambient = new THREE.AmbientLight(0xffffff, 1.2);
 scene.add(ambient);
 
@@ -689,7 +724,6 @@ const fillLight = new THREE.DirectionalLight(0xffffff, 0.5);
 fillLight.position.set(-5, 2, -5);
 scene.add(fillLight);
 
-// Contrôles orbitaux
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
@@ -699,12 +733,10 @@ controls.maxPolarAngle = Math.PI / 1.8;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 1.2;
 
-// Chargement du modèle
 const loader = new GLTFLoader();
 loader.load('models/scene-lowpoly.glb', (gltf) => {
     const model = gltf.scene;
 
-    // Centrer automatiquement le modèle
     const box = new THREE.Box3().setFromObject(model);
     const center = box.getCenter(new THREE.Vector3());
     const size = box.getSize(new THREE.Vector3());
@@ -716,7 +748,6 @@ loader.load('models/scene-lowpoly.glb', (gltf) => {
 
     scene.add(model);
 
-    // Cacher le hint après interaction
     canvas.addEventListener('pointerdown', () => {
         const hint = document.querySelector('.viewer-hint');
         if (hint) hint.style.opacity = '0';
@@ -727,7 +758,6 @@ loader.load('models/scene-lowpoly.glb', (gltf) => {
     console.error('Erreur chargement modèle:', error);
 });
 
-// Resize
 window.addEventListener('resize', () => {
     const w = canvas.offsetWidth;
     const h = canvas.offsetHeight;
@@ -736,7 +766,6 @@ window.addEventListener('resize', () => {
     renderer.setSize(w, h);
 });
 
-// Boucle de rendu
 function animate() {
     requestAnimationFrame(animate);
     controls.update();
@@ -744,6 +773,7 @@ function animate() {
 }
 animate();
 </script>
+
 
 
 </html>
