@@ -1725,19 +1725,18 @@ body::after {
 }
 
 /* ==========================================================================
-   HAMBURGER MENU — MOBILE ONLY (max-width: 900px)
+   HAMBURGER MENU — MOBILE ONLY
    ========================================================================== */
 
-/* Le bouton hamburger est caché sur desktop */
 .hamburger {
-    display: none;
+    display: none !important; /* Caché sur desktop */
 }
 
 @media (max-width: 900px) {
 
-    /* --- Bouton hamburger --- */
+    /* Affiche le hamburger */
     .hamburger {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         justify-content: center;
         gap: 5px;
@@ -1759,7 +1758,6 @@ body::after {
         transform-origin: center;
     }
 
-    /* Animation vers croix quand actif */
     .hamburger.is-active .ham-bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
@@ -1771,62 +1769,62 @@ body::after {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* --- Menu mobile (panneau latéral / drawer) --- */
+    /* Cache la nav et la sort du flux normal */
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100dvh;
-        width: min(280px, 80vw);
-        background: rgba(15, 23, 42, 0.97);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        height: 100dvh !important;
+        width: min(280px, 80vw) !important;
+        background: rgba(15, 23, 42, 0.97) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
 
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 80px 32px 40px 32px;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding: 80px 32px 40px 32px !important;
 
-        transform: translateX(100%);
-        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1050;
+        transform: translateX(100%) !important;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 1050 !important;
+        list-style: none !important;
     }
 
+    /* Quand le menu est ouvert */
     .nav-links.nav-open {
-        transform: translateX(0);
+        transform: translateX(0) !important;
     }
 
-    /* Liens dans le drawer */
     .nav-links li {
         width: 100%;
     }
 
     .nav-links a {
-        font-size: 1.05rem;
-        padding: 10px 0;
-        display: block;
-        opacity: 1;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        width: 100%;
+        font-size: 1.05rem !important;
+        padding: 10px 0 !important;
+        display: block !important;
+        opacity: 1 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+        width: 100% !important;
     }
 
-    /* Bouton Contact dans le drawer */
     .nav-links .btn-contact {
-        margin-top: 16px;
-        display: block;
-        text-align: center;
-        border-bottom: none;
-        padding: 11px 20px;
+        margin-top: 16px !important;
+        display: block !important;
+        text-align: center !important;
+        border-bottom: none !important;
+        padding: 11px 20px !important;
     }
 
-    /* Bouton CV dans le drawer */
     .nav-links .btn-cv {
-        margin-top: 10px;
-        justify-content: center;
-        border-bottom: none;
-        width: 100%;
+        margin-top: 10px !important;
+        justify-content: center !important;
+        border-bottom: none !important;
+        width: 100% !important;
     }
 
     /* Overlay sombre derrière le drawer */
@@ -1836,6 +1834,5 @@ body::after {
         inset: 0;
         background: rgba(0, 0, 0, 0.5);
         z-index: 1040;
-        backdrop-filter: blur(2px);
     }
 }
