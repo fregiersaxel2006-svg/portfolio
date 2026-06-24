@@ -756,5 +756,20 @@ function animate() {
 animate();
 </script>
 
-
+<script>
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle?.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-open');
+    toggle.querySelector('.material-icons').textContent =
+        navLinks.classList.contains('nav-open') ? 'close' : 'menu';
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+        navLinks.classList.remove('nav-open');
+        toggle.querySelector('.material-icons').textContent = 'menu';
+    });
+});
+</script>
+                    
 </html>
