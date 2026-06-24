@@ -1725,66 +1725,72 @@ body::after {
 }
 
 /* ==========================================================================
-   RESPONSIVE NAVBAR (MENU HAMBURGER MOBILE)
+   RESPONSIVE NAVBAR (MENU HAMBURGER MOBILE) - SÉCURISÉ
    ========================================================================== */
 
-/* Masqué par défaut sur grand écran (PC) */
-.menu-toggle {
+.main-header .menu-toggle {
     display: none;
     background: none;
     border: none;
     color: #ffffff;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 99999;
+    padding: 10px;
 }
 
-.menu-toggle .close-icon {
-    display: none; /* Cache l'icône de fermeture initialement */
+.main-header .menu-toggle .close-icon {
+    display: none;
 }
 
-/* Quand le bouton est actif, on alterne les icônes */
-.menu-toggle.active .menu-icon { display: none; }
-.menu-toggle.active .close-icon { display: inline-block; }
+.main-header .menu-toggle.active .menu-icon { display: none !important; }
+.main-header .menu-toggle.active .close-icon { display: inline-block !important; }
 
-/* Déclenchement sous 992px (Format Tablette & Mobile) */
-@media (max-width: 992px) {
-    .menu-toggle {
-        display: block; /* Devient visible sur mobile */
+/* Force l'activation sur mobile et tablette */
+@media screen and (max-width: 992px) {
+    
+    .main-header .menu-toggle {
+        display: block !important; /* Force l'apparition du bouton */
     }
 
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Caché sur le côté droit par défaut */
-        width: 70%; /* Prend une partie de l'écran en largeur */
-        height: 100vh;
-        background: rgba(15, 23, 42, 0.95); /* Arrière-plan sombre reprenant ta charte */
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px; /* Espace vertical entre les liens */
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transition glissée et fluide */
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 40px 20px;
+    .main-header .navbar .nav-links {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* Caché par défaut */
+        width: 75% !important;
+        height: 100vh !important;
+        background: rgba(15, 23, 42, 0.98) !important; /* Fond opaque pour bien masquer le contenu */
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 35px !important;
+        transition: right 0.4s ease-in-out !important;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5) !important;
     }
 
-    /* Déploiement du menu sur l'écran */
-    .nav-links.active {
-        right: 0;
+    /* Quand le menu est ouvert */
+    .main-header .navbar .nav-links.active {
+        right: 0 !important;
     }
 
-    /* Ajustement des boutons internes pour le format vertical */
-    .nav-links .btn-contact {
-        width: 80%;
+    .main-header .navbar .nav-links li {
+        width: 100%;
         text-align: center;
     }
 
-    .btn-cv {
-        width: 80%;
-        justify-content: center;
+    .main-header .navbar .nav-links a {
+        font-size: 1.2rem !important;
+        display: block;
+        width: 100%;
+    }
+
+    .main-header .nav-links .btn-contact,
+    .main-header .btn-cv {
+        width: 80% !important;
+        margin: 0 auto !important;
+        justify-content: center !important;
     }
 }
 
