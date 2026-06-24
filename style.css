@@ -1357,19 +1357,6 @@ p strong {
     .timelines-wrapper { flex-direction: column; gap: 60px; }
 }
 
-@media (max-width: 768px) {
-
-    /* Grille compétences */
-    .skills-grid { grid-template-columns: 1fr; }
-    .text-fullwidth { grid-column: span 1; }
-
-    /* Footer mobile */
-    .footer-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-    .footer-logo { align-self: center; }
-    .footer-brand p { margin: 0 auto; }
-    .footer-content h4::after { left: 50%; transform: translateX(-50%); }
-    .footer-links a:hover { padding-left: 0; }
-}
 
 .footer-contact-item svg {
     fill: #2563eb;
