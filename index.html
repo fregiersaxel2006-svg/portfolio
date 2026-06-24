@@ -28,30 +28,28 @@
     <div id="mouse-glow"></div>
     <div id="cursor-trail"></div>
     <canvas id="particle-canvas"></canvas>
-   <header class="main-header">
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#home"><img src="img/icon.png" alt="Logo Axel Frégiers"></a>
-        </div>
-
-        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
-            <span class="material-icons">menu</span>
-        </button>
-
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#parcours">Parcours</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#centre">Centre d'intérêt</a></li>
-            <li><a href="#contact" class="btn-contact">Contact</a></li>
-            <li><a href="document/Axel Frégiers — CV 2026.pdf" download="CV_Axel_Fregiers.pdf" class="btn-cv" target="_blank">
-                <span class="material-icons">download</span>
-                Mon CV
-            </a></li>
-        </ul>
-    </nav>
-</header>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home"><img src="img/icon.png" alt="Logo Axel Frégiers"></a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#centre">Centre d'intérêt</a></li>
+                <li><a href="#contact" class="btn-contact">Contact</a></li>
+                <li><a href="document/Axel Frégiers — CV 2026.pdf" download="CV_Axel_Fregiers.pdf" class="btn-cv" target="_blank">
+                    <span class="material-icons">download</span>
+                   Mon CV
+                </a>
+                
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- TOUT TON CONTENU DOIT RESTER DANS LE <main> -->
     <main>
@@ -855,21 +853,5 @@ const barObserver = new IntersectionObserver((entries) => {
 bars.forEach(bar => barObserver.observe(bar));
 </script>
 
-<script>
-document.getElementById('nav-toggle').addEventListener('click', function() {
-    const menu = document.getElementById('nav-links');
-    const icon = this.querySelector('.material-icons');
-    menu.classList.toggle('nav-open');
-    icon.textContent = menu.classList.contains('nav-open') ? 'close' : 'menu';
-});
-
-document.querySelectorAll('#nav-links a').forEach(function(a) {
-    a.addEventListener('click', function() {
-        document.getElementById('nav-links').classList.remove('nav-open');
-        document.querySelector('#nav-toggle .material-icons').textContent = 'menu';
-    });
-});
-</script>
-    
 </body>
 </html>
