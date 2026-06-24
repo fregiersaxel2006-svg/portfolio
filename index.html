@@ -28,7 +28,7 @@
     <div id="mouse-glow"></div>
     <div id="cursor-trail"></div>
     <canvas id="particle-canvas"></canvas>
-    <header class="main-header">
+   <header class="main-header">
         <nav class="navbar">
             <div class="logo">
                 <a href="#home"><img src="img/icon.png" alt="Logo Axel Frégiers"></a>
@@ -857,19 +857,17 @@ const barObserver = new IntersectionObserver((entries) => {
 bars.forEach(bar => barObserver.observe(bar));
 </script>
 
-    <script>
-// --- LOGIQUE NAVBAR MOBILE (HAMBURGER) ---
+<script>
+// --- MANAGEMENT DU MENU MOBILE ---
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinksContainer = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links a');
 
-// Ouvrir / Fermer le menu au clic sur le bouton
 menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
     navLinksContainer.classList.toggle('active');
 });
 
-// Fermer automatiquement le menu au clic sur un lien (pour la navigation interne)
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
