@@ -33,20 +33,34 @@
             <div class="logo">
                 <a href="#home"><img src="img/icon.png" alt="Logo Axel Frégiers"></a>
             </div>
+
+            <!-- BOUTON HAMBURGER (mobile uniquement) -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- OVERLAY sombre derrière le menu mobile -->
+            <div class="nav-overlay" id="nav-overlay"></div>
             
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#parcours">Parcours</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#centre">Centre d'intérêt</a></li>
-                <li><a href="#contact" class="btn-contact">Contact</a></li>
-                <li><a href="document/Axel Frégiers — CV 2026.pdf" download="CV_Axel_Fregiers.pdf" class="btn-cv" target="_blank">
+            <ul class="nav-links" id="nav-links">
+                <!-- Bouton fermer (mobile uniquement) -->
+                <li class="nav-close-item">
+                    <button class="nav-close-btn" id="nav-close-btn" aria-label="Fermer le menu">
+                        <span class="material-icons">close</span>
+                    </button>
+                </li>
+                <li><a href="#about" class="nav-link-item">À propos</a></li>
+                <li><a href="#parcours" class="nav-link-item">Parcours</a></li>
+                <li><a href="#competences" class="nav-link-item">Compétences</a></li>
+                <li><a href="#projets" class="nav-link-item">Projets</a></li>
+                <li><a href="#centre" class="nav-link-item">Centre d'intérêt</a></li>
+                <li><a href="#contact" class="btn-contact nav-link-item">Contact</a></li>
+                <li><a href="document/Axel Frégiers — CV 2026.pdf" download="CV_Axel_Fregiers.pdf" class="btn-cv nav-link-item" target="_blank">
                     <span class="material-icons">download</span>
                    Mon CV
-                </a>
-                
-                </li>
+                </a></li>
             </ul>
         </nav>
     </header>
@@ -128,8 +142,8 @@
 <section class="philo-container">
     <div class="philo-card reveal">
         <div class="philo-content">
-            <span class="philo-icon">“</span>
-            <p class="philo-quote">Le seul vrai pouvoir révolutionnaire, c’est le pouvoir d’inventer.</p>
+            <span class="philo-icon">"</span>
+            <p class="philo-quote">Le seul vrai pouvoir révolutionnaire, c'est le pouvoir d'inventer.</p>
             <span class="philo-author">Joseph Beuys</span>
         </div>
     </div>
@@ -326,9 +340,13 @@
                             <div class="skill-info"><span>CapCut</span><span>90%</span></div>
                             <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
                         </div>
+                            <div class="skill-item">
+                            <div class="skill-info"><span>DaVinci Resolve</span><span>70%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="70%"></div></div>
+                        </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span>After Effects</span><span>60%</span></div>
-                            <div class="progress-bar"><div class="progress-fill" data-width="60%"></div></div>
+                            <div class="skill-info"><span>After Effects</span><span>55%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="55%"></div></div>
                         </div>
                     </div>
                 </div>
@@ -468,7 +486,7 @@
                         <span class="project-badge badge-cinema">Cinéma & Audiovisuel</span>
                     </div>
                     <div class="project-info">
-                        <h3>L'étau de l'ombre</h3>
+                        <h3>L'Étau de l'ombre</h3>
                         <p>Réalisation d'un court-métrage en 12 heures chrono. Une véritable course contre la montre exigeant une gestion du temps rigoureuse et le respect strict du scénario, traduit fidèlement à l'écran à travers l'intégralité de chaque plan.</p>
                         <div class="project-techs">
                             <span>Scénario</span>
@@ -520,14 +538,6 @@
                         <a href="projets.html#graphique" class="btn-project-link">Voir le projet <span class="material-icons">arrow_right_alt</span></a>
                     </div>
                 </div>
-
-
-                
-
-                
-
-                
-
 
             </div>
         </section>
@@ -691,7 +701,6 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const {r, g, b} = CFG;
 
-    // Dessiner les lignes EN PREMIER (sous les points)
     if (CFG.lines) {
         for (let i = 0; i < pts.length; i++) {
             for (let j = i + 1; j < pts.length; j++) {
@@ -711,19 +720,16 @@ function draw() {
         }
     }
 
-    // Dessiner les points PAR DESSUS
     pts.forEach(p => {
         p.y -= p.spd;
         p.x += p.drift;
 
-        // Reboucler : quand une particule sort en haut, elle revient en bas
         if (p.y + p.s < 0) {
             p.y    = canvas.height + p.s;
             p.x    = Math.random() * canvas.width;
             p.spd  = 0.15 + Math.random() * CFG.speed;
             p.drift= (Math.random() - 0.5) * 0.4;
         }
-        // Si elle sort sur les côtés, elle revient de l'autre côté
         if (p.x < -10) p.x = canvas.width + 10;
         if (p.x > canvas.width + 10) p.x = -10;
 
@@ -740,8 +746,6 @@ draw();
 </script>
 
 <script>
-    //effet de souris sur tout le flux
-// Glow
 document.addEventListener('mousemove', (e) => {
     const x = e.clientX / window.innerWidth * 100;
     const y = e.clientY / window.innerHeight * 100;
@@ -749,7 +753,6 @@ document.addEventListener('mousemove', (e) => {
     document.documentElement.style.setProperty('--mouse-y', y + '%');
 });
 
-// Particules souris
 const particleCanvas = document.createElement('canvas');
 particleCanvas.id = 'cursor-particles';
 particleCanvas.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none;';
@@ -790,7 +793,7 @@ function drawParticles() {
         const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.05; // gravité légère
+        p.vy += 0.05;
         p.opacity -= 0.02;
         p.size *= 0.97;
 
@@ -851,6 +854,44 @@ const barObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 bars.forEach(bar => barObserver.observe(bar));
+</script>
+
+<!-- ===================== HAMBURGER MENU SCRIPT ===================== -->
+<script>
+(function() {
+    const btn     = document.getElementById('hamburger-btn');
+    const navList = document.getElementById('nav-links');
+    const overlay = document.getElementById('nav-overlay');
+    const closeBtn = document.getElementById('nav-close-btn');
+
+    function openMenu() {
+        navList.classList.add('nav-open');
+        overlay.classList.add('overlay-visible');
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        navList.classList.remove('nav-open');
+        overlay.classList.remove('overlay-visible');
+        btn.classList.remove('is-active');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', () => {
+        navList.classList.contains('nav-open') ? closeMenu() : openMenu();
+    });
+
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Ferme le menu au clic sur un lien
+    navList.querySelectorAll('.nav-link-item').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+})();
 </script>
 
 </body>
