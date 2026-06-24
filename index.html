@@ -860,13 +860,16 @@ document.getElementById('nav-toggle').addEventListener('click', function() {
     const menu = document.getElementById('nav-links');
     const icon = this.querySelector('.material-icons');
     menu.classList.toggle('nav-open');
-    icon.textContent = menu.classList.contains('nav-open') ? 'close' : 'menu';
+    const isOpen = menu.classList.contains('nav-open');
+    icon.textContent = isOpen ? 'close' : 'menu';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
 document.querySelectorAll('#nav-links a').forEach(function(a) {
     a.addEventListener('click', function() {
         document.getElementById('nav-links').classList.remove('nav-open');
         document.querySelector('#nav-toggle .material-icons').textContent = 'menu';
+        document.body.style.overflow = '';
     });
 });
 </script>
