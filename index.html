@@ -57,7 +57,7 @@
                 <li><a href="#projets" class="nav-link-item">Projets</a></li>
                 <li><a href="#centre" class="nav-link-item">Centre d'intérêt</a></li>
                 <li><a href="#contact" class="btn-contact nav-link-item">Contact</a></li>
-                <li><a href="document/Axel-Fregiers-CV-2026.pdf" 
+                <li><a href="/portfolio/document/Axel-Fregiers-CV-2026.pdf" 
               class="btn-cv nav-link-item" 
               download="Axel-Fregiers-CV-2026.pdf">
              <span class="material-icons">download</span>
@@ -804,7 +804,7 @@ function drawParticles() {
         }
 
         pCtx.beginPath();
-        pCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        pCtx.arc(p.x, p.y, p.s, 0, Math.PI * 2);
         pCtx.fillStyle = `rgba(${p.color}, ${p.opacity})`;
         pCtx.fill();
     }
